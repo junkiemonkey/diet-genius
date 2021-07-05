@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  @media (min-width: $md) {
+    padding: 60px 52px 0 27px;
+    align-items: flex-start;    
+  }
+
+  &__logo {
+    @include block(185px, 37px);
+    @media (min-width: $md) {
+      @include size(227px, 60px);
+    }
+    img {
+      display: block;
+      max-height: 100%;
+    }
+  }
+
+  &__menu-toggle {
+    @include size(16px, 12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &::before,
+    &::after,
+    i {
+      display: block;
+      content: '';
+      height: 2px;
+      background: #31353E;
+    }
+
+    i {
+      width: 9px;
+      @include trans(.3s);
+    }
+
+    &:hover {
+      i {
+        width: 100%;
+      }
+    }
+  }
+}

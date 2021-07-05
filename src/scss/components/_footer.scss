@@ -1,0 +1,40 @@
+.footer {
+  text-align: center;
+  padding: 0px 15px;
+  // display: none;
+  overflow: hidden;
+  max-height: 0;
+  @include trans(0s ease $transition-time-long);
+
+  &__copyright {
+    margin-bottom: 40px;
+  }
+
+  &__apps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    a {
+      display: block;
+      margin: 0 7px;
+      text-decoration: none;
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+
+    a {
+      display: block;
+      text-decoration: none;
+      margin: 0 25px;
+    }
+  }
+}

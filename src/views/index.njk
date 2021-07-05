@@ -1,0 +1,116 @@
+{% extends "base.njk" %}
+{% block content %}
+  <div class="banner"></div>
+  <main class="page">
+    <header class="header">
+      <div class="header__logo">
+        <img src="/logo.svg" alt=""/>
+      </div>
+      <a href="" class="header__menu-toggle jsMenuToggle">
+        <i></i>
+      </a>
+    </header>
+    <nav class="nav jsNav">
+      <a href="" class="nav__close jsNavClose">close</a>
+      <menu class="nav__menu">
+        <li>
+          <a href="">About us</a>
+        </li>
+        <li>
+          <a href="">Contact Us</a>
+        </li>
+        <li>
+          <a href="">FAQ</a>
+        </li>
+        <li>
+          <a href="">Terms of Service</a>
+        </li>
+        <li>
+          <a href="">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="">Subscription Policy</a>
+        </li>
+      </menu>
+    </nav>
+    <article class="content">
+      <h1 class="content__title">Healthy live matter
+      </h1>
+      <div class="content__text">
+        <p class="short">Diet efficiency depends strongly on such factors as activity level, metabolism, past dieting
+          experience, meal frequency, food availability.
+        </p>
+        <p class="long">Our app will constantly adjust meal plan according to changes in preference, weight loss/gain dynamic.
+          Moreover, after goals achieved, DietGenius will help to sustain current conditions considering weight, activities,
+          location, and food availability.</p>
+      </div>
+      <div class="features">
+        <figure class="feature">
+          <div class="feature__img"><img src="/f-1.svg" alt="">
+          </div>
+          <figcaption>
+            <h4 class="feature__title">Manage your weight quickly and safely</h4>
+            <p class="feature__text">Based on goals and preferences, get the diet plan that suits best.</p>
+          </figcaption>
+        </figure>
+        <figure class="feature">
+          <div class="feature__img"><img src="/f-2.svg" alt="">
+          </div>
+          <figcaption>
+            <h4 class="feature__title">Fully customizable</h4>
+            <p class="feature__text">Personalized meal plan. No more calorie counting. No more counting the size of the portion.</p>
+          </figcaption>
+        </figure>
+        <figure class="feature">
+          <div class="feature__img"><img src="/f-3.svg" alt="">
+          </div>
+          <figcaption>
+            <h4 class="feature__title">A professional dietitian on your phone</h4>
+            <p class="feature__text">AI-based. Personal.</p>
+          </figcaption>
+        </figure>
+        <figure class="feature">
+          <div class="feature__img"><img src="/f-4.svg" alt="">
+          </div>
+          <figcaption>
+            <h4 class="feature__title">Easy way to success</h4>
+            <p class="feature__text">Track your results. Manage your weight quickly and safely</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="content__actions">
+        <a href="/quiz.html" class="button">Take the test</a>
+        <span>and be healthier</span>
+      </div>
+    </article>
+    <footer class="footer">
+      <div class="footer__copyright">
+        <p>Copyright © 2020 MyDietGenius.</p>
+        <p>All rights reserved.</p>
+      </div>
+      <div class="footer__apps">
+        <a href=""><img src="/gp-icon.svg" alt="Google Play">
+        </a>
+        <a href=""><img src="/as-icon.svg" alt="App Store">
+        </a>
+      </div>
+      <div class="footer__social">
+        <a href=""><img src="/fb-icon.svg" alt="Facebook">
+        </a>
+        <a href=""><img src="/in-icon.svg" alt="Instagram">
+        </a>
+        <a href=""><img src="/tw-icon.svg" alt="Twitter">
+        </a>
+      </div>
+    </footer>
+    <a href="" class="page__more jsMoreLink">more about app</a>
+    <div class="page__social quiz__footer">
+      <a href=""><img src="/apple-icon.svg" alt="Apple">
+        <span>App on iOS</span>
+      </a>
+      <a href=""><img src="/play-icon.svg" alt="Google">
+        <span>App on Android</span>
+      </a>
+    </div>
+  </main>
+{% endblock content %}

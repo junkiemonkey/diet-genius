@@ -1,0 +1,53 @@
+.nav {
+  background-color: #fff;
+  @include fixed-point(0, -100vw);
+  @include block(100%);
+  z-index: 66;
+  padding: 15vh 7vw 0;
+  @include trans(transform $transition-time ease);
+  transform: translate3d(0, 0, 0);
+  @media (min-width: $md) {
+    position: absolute;    
+    left: -50vw;
+  }
+  &--open {
+    transform: translate3d(100%, 0, 0);
+  }
+  &__close {
+    @include abs(15px, 6vw);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    @media (min-width: $sm) {
+      top: 35px;      
+      right: 5vw;
+    }
+    @media (min-width: $lg) {
+      top: 45px;      
+    }
+    &:after {
+      content: '';
+      @include block(14px);
+      @include bg-size('close-icon.svg');
+      margin-left: 20px;
+    }
+  }
+  &__menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+      margin-bottom: 25px;
+      @media (min-width: $sm) {
+        margin-bottom: 45px;        
+      }
+    }
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      font-family: $font-montserrat;
+      color: #31353E;
+    }
+  }
+}

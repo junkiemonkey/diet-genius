@@ -1,0 +1,150 @@
+// Base
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/base";
+
+@import "components/header";
+@import "components/nav";
+@import "components/content";
+@import "components/features";
+@import "components/footer";
+@import "components/quiz";
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+  }
+}
+
+.banner {
+  height: 200px;
+  flex-shrink: 0;
+  @include bg-size('banner-s.png', cover);
+  @include trans(height $transition-time-long);
+  @media (min-width: $sm) {
+    height: 350px;    
+  }
+  @media (min-width: $md) {
+    @include fixed(0, 0);
+    @include block(50%, 100%);
+    @include bg-size('banner-m.png', cover);
+    &:after {
+      content: '';
+      @include abs-point(0, 0);
+      @include block(100%);
+      @include bg-size('banner-m-1.png', cover);
+      opacity: 0;
+      @include trans($transition-time-long);
+    }
+  }
+}
+
+.page {
+  flex: 1 0 auto;
+  position: relative;
+  @media (min-width: $md) {
+    width: 50%;    
+    flex: 0 0 50%;
+  }
+
+  &__more {
+    display: flex;
+    text-decoration: none;
+    @include abs(auto, auto, 15px, 50px);
+    color: #366EFF;
+    align-items: center;
+
+    @media (min-width: $md) {
+      bottom: 100px;
+      left: 85px;       
+    }    
+
+
+    &:before {
+      content: '';
+      @include block(30px);
+      @include bg-size('more-icon.svg');
+      margin-right: 24px;
+    }
+  }
+
+  &__social {
+    display: none;
+    @media (min-width: $md) {
+      display: flex;
+      bottom: 33px;
+      justify-content: flex-start;
+      padding-left: 61px;
+      padding-bottom: 0;
+    }
+  }
+
+}
+
+.full {
+  .banner {    
+    @media (max-width: $sm) {
+      height: 0;
+    }
+    @media (min-width: $md) {
+      &:after {
+        opacity: 1;
+      }     
+    }
+  }
+
+  .features {
+    max-height: 1700px;
+    margin: 50px 0;
+
+  }
+
+  .content {
+    &__title {
+      font-size: 30px;
+      font-weight: 600;
+      @media (min-width: $md) {
+        font-size: 40px;  
+        margin-bottom: 30px;      
+      }
+    }
+
+    &__text {
+      p.short {
+        display: none;
+      }
+
+      p.long {
+        display: block;
+      }
+    }
+
+    &__actions {
+      .button {
+        margin: 0 auto;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .page__more {
+    display: none;
+  }
+
+  .page__social {
+    display: none;
+  }
+
+  .footer {
+    max-height: 300px;
+    padding: 30px 15px 34px; 
+  }
+}
