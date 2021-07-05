@@ -68,7 +68,7 @@ import "../scss/styles.scss";
     allowTouchMove: false,
     autoHeight: true,
     slideActiveClass: 'form__page--active',
-    effect: 'fade',
+    // effect: 'fade',
     // initialSlide: 5
   });
   
@@ -89,6 +89,8 @@ import "../scss/styles.scss";
     steps.slidePrev();
     pages.slidePrev();
     nextButton.disabled = isStepValid(pages.realIndex);
+    submitButton.style.display = "none";
+    nextButton.style.display = "block";
     if (steps.isBeginning) {
       prevButton.style.display = 'none';
     }

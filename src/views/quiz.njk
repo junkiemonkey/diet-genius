@@ -2,9 +2,14 @@
 {% block content %}
   <div class="quiz">
     <header class="quiz__header">
-      <a href="/" class="back-link"><img src="/arr-back.svg" alt=""> </a>
-      <img src="/logo.svg" class="quiz__logo" alt=""/>
+      <a href="/" class="back-link"><img src="/arr-back.svg" alt="Back">
+      </a>
+      <picture>
+        <source media="(min-width: 760px)" srcset="/logo-s.svg"/>
+        <img src="/logo.svg" class="quiz__logo" alt="Diet Genius"/>
+      </picture>
     </header>
+    <h1 class="quiz__title content__title">Demographic Profile</h1>
     <div class="jsQuizSteps swiper-container steps">
       <div class="swiper-wrapper">
         <div class="swiper-slide steps__slide">What is your gender?</div>
@@ -22,22 +27,22 @@
           <div class="swiper-slide form__page">
             <fieldset class="form__group">
               <label class="form__label form__label--big">
-                <input type="radio" name="gender" value="female">
-                <figure class="radiobutton">
-                  <div class="radiobutton__icon"><img src="/female.png" alt="">
-                  </div>
-                  <figcaption class="radiobutton__caption">
-                    <h3>Female</h3>
-                  </figcaption>
-                </figure>
-              </label>
-              <label class="form__label form__label--big">
                 <input type="radio" name="gender" value="male">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon"><img src="/male.png" alt="">
                   </div>
                   <figcaption class="radiobutton__caption">
                     <h3>Male</h>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label form__label--big">
+                <input type="radio" name="gender" value="female">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon"><img src="/female.png" alt="">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Female</h3>
                   </figcaption>
                 </figure>
               </label>
@@ -69,7 +74,7 @@
               </select>
             </div>
           </div>
-          <div class="swiper-slide form__page form__page--pad">
+          <div class="swiper-slide form__page form__page--pad form__page--scroll">
             <fieldset class="form__group">
               <label class="form__label">
                 <input type="radio" name="activity" value="low">
@@ -80,7 +85,7 @@
                   </div>
                   <figcaption class="radiobutton__caption">
                     <h3>Low active</h3>
-                    <p>Moderate training 1 times a week</p>
+                    <p>Moderate training 1&nbsp;times a week</p>
                   </figcaption>
                 </figure>
               </label>
@@ -93,7 +98,7 @@
                   </div>
                   <figcaption class="radiobutton__caption">
                     <h3>Sedentary</h3>
-                    <p>Moderate training 3 times a week
+                    <p>Moderate training 3&nbsp;times a week
                     </p>
                   </figcaption>
                 </figure>
@@ -107,7 +112,7 @@
                   </div>
                   <figcaption class="radiobutton__caption">
                     <h3>Somewhat Active</h3>
-                    <p>Moderate training 5 times a week
+                    <p>Moderate training 5&nbsp;times a week
                     </p>
                   </figcaption>
                 </figure>
@@ -121,7 +126,7 @@
                   </div>
                   <figcaption class="radiobutton__caption">
                     <h3>Active</h3>
-                    <p>Intensive training 5 times a week
+                    <p>Intensive training 5&nbsp;times a week
                     </p>
                   </figcaption>
                 </figure>
@@ -162,7 +167,7 @@
                   </div>
                   <figcaption class="radiobutton__caption">
                     <h3>Superman</h3>
-                    <p>Daily exercise + physical work</p>
+                    <p>Daily exercise +&nbsp;physical work</p>
                   </figcaption>
                 </figure>
               </label>
@@ -230,12 +235,26 @@
       </div>
     </form>
     <footer class="quiz__footer">
-      <a href=""><img src="/apple-icon.svg" alt="Apple">
-        <span>App on iOS</span>
-      </a>
-      <a href=""><img src="/play-icon.svg" alt="Google">
-        <span>App on Android</span>
-      </a>
+      <div class="footer__copyright">
+        <p>Copyright © 2020 MyDietGenius.</p>
+        <p>All rights reserved.</p>
+      </div>
+      <div class="quiz__social">
+        <a href=""><img src="/apple-icon.svg" alt="Apple">
+          <span>App on iOS</span>
+        </a>
+        <a href=""><img src="/play-icon.svg" alt="Google">
+          <span>App on Android</span>
+        </a>
+      </div>
+      <div class="footer__social">
+        <a href=""><img src="/fb-icon.svg" alt="Facebook">
+        </a>
+        <a href=""><img src="/in-icon.svg" alt="Instagram">
+        </a>
+        <a href=""><img src="/tw-icon.svg" alt="Twitter">
+        </a>
+      </div>
     </footer>
   </div>
 {% endblock content %}

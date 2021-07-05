@@ -6,6 +6,9 @@
   &__header {
     padding: 20px 0;
     position: relative;
+    @media (min-width: $sm) {
+      padding: 30px 0;
+    }
     .back-link {
       @include size(50px);
       display: flex;
@@ -18,27 +21,81 @@
   &__logo {
     @include block(185px, 37px);
     margin: auto;
+    @media (min-width: $sm) {
+      @include size(42px, 60px);      
+    }
 
     img {
       display: block;
       max-height: 100%;
     }
   }
+
+  &__title {
+    text-align: center;
+    display: none;
+    margin: 0 0 30px;
+    font-weight: 600;
+    @media (min-width: $sm) {
+      display: block;
+      font-size: 40px;
+    }
+  }
+
   &__footer {
     display: flex;
     padding: 0 0 13px;
     justify-content: center;
     width: 100%;
     @include abs(auto, auto, 0, 0);
+    @media (min-width: $sm) {
+      padding-bottom: 30px;      
+    }
+    @media (min-width: $md) {
+      padding: 0 85px 15px; 
+      justify-content: space-between;
+    }
+    .footer__copyright {
+      display: none;
+      @media (min-width: $md) {
+        display: block;    
+        margin-bottom: 0;    
+        width: 30%;
+      }
+    }
+    .footer__social {
+      display: none;
+      @media (min-width: $md) {
+        display: flex;        
+        width: 30%;
+      }
+    }
+    
+  }
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    @media (min-width: $md) {      
+      width: 38%;
+    }
+
     a {
-      padding: 0 24px;
       display: flex;
       text-decoration: none;
       color: #31353E;
+      width: 50%;
+      &:first-child {
+        padding-right: 24px;
+        justify-content: flex-end;
+      }
       &:last-child {
         border-left: 1px solid #DCDCDC;
+        padding-left: 24px;
       }
       img {
+        width: 20px;
         margin-right: 8px;
       }
     }
@@ -73,6 +130,23 @@
 }
 
 .steps {
+  @media (min-width: $sm) {
+    &:before, &:after {
+      content: '';
+      @include block(30%, 100%);
+      position: absolute;
+      top: 0;
+      z-index: 2;
+    }    
+    &:before {
+      left: 0;
+      background-image: linear-gradient(to right, #fff, transparent);
+    }
+    &:after {
+      right: 0;
+      background-image: linear-gradient(to left, #fff, transparent);
+    }
+  }
   &__slide {
     text-align: center;
     font-size: 16px;
@@ -124,15 +198,48 @@
 .form {
   margin-top: 15px;
 
+  &__pages {
+    @media (min-width: $sm) {
+      min-height: 330px;
+    }
+  }
+
   &__page {
     padding: 2px 0 40px;
     background-color: #fff;
+    overflow: hidden;
     @include trans(opacity .4s);
+    
     &--pad {
       padding: 2px 23px 40px;
+      
+    }
+    &--scroll {
+      @media (min-width: $sm) {
+        &::-webkit-scrollbar-thumb {
+          background: #fff;
+        }
+        &::-webkit-scrollbar {
+          height: 0;
+          width: 0;
+        }
+        overflow-x: auto;
+        padding: 40px 85px !important;
+        .form__label {
+          margin-right: 15px;
+          margin-bottom: 0;
+          &:last-child {
+            margin-right: 85px;
+          }
+        }      
+      }
     }
     &--active {
       z-index: 2;
+    }
+    @media (min-width: $sm) {
+      padding: 40px 0;    
+      min-height: 330px;  
     }
   }
 
@@ -163,6 +270,10 @@
     border: none;
     padding: 0;
     margin: 0;
+    @media (min-width: $sm) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__label {
@@ -176,6 +287,10 @@
         box-shadow: rgba(65, 60, 125, 0.102) 0 20px 20px,
           $red 0 -1px 0, $red 0 5px 0 1px, $red 1px 0 0, $red -1px 0 0;
         border-color: $red;
+        @media (min-width: $sm) {
+          box-shadow: rgba(65, 60, 125, 0.102) 0 20px 20px,
+          $red 0 -1px 0, $red 0 10px 0 1px, $red 1px 0 0, $red -1px 0 0;                    
+        }
         .radiobutton__icon {
           img:nth-child(2):nth-last-child(1) {
             opacity: 1;
@@ -197,15 +312,40 @@
         padding: 32px 0;
         max-width: 200px;
         text-align: center;
+        @media (min-width: $sm) {
+          width: 240px;    
+          max-width: none;
+          padding: 63px 0 38px;      
+        }
         &__icon {
           margin: 0;
         }
         &__caption {
           h3 {
             font-size: 1.286em;
-          }
-          
+            height: auto;
+            margin: 0;
+          }          
           margin-top: 11px;
+          @media (min-width: $sm) {
+            margin-top: 35px;            
+          }
+        }
+      }
+    }
+    @media (min-width: $sm) {
+      &:first-child:nth-last-child(3),
+      &:first-child:nth-last-child(3) ~ .form__label {
+        margin: 0 20px;
+        .radiobutton {
+          width: 200px;
+          padding: 30px 10px 40px;
+
+          &__caption {
+            h3 {
+              height: auto;
+            }
+          }
         }
       }
     }
@@ -213,14 +353,18 @@
 
   &__block {
     display: flex;
-    padding: 120px 0px;
-    margin: auto;
+    // padding: 120px 0px;
+    margin: 120px auto;
     width: calc(100% - 60px);
+    max-width: 512px;
     font-size: 20px;
     position: relative;
+    @media (min-width: $md) {
+      margin-top: 80px;      
+    }
     &:after {
       content: '';
-      @include block(1px, 24px);
+      @include block(1px, 60px);
       @include abs-point(50%, calc(100% - 95px));
       z-index: 1;
       transform: translateY(-50%);
@@ -268,9 +412,19 @@
   align-items: center;
   padding: 15px;
   @include trans(.5s);   
+  @media (min-width: $sm) {
+    flex-direction: column;
+    width: 158px;    
+    padding: 20px 11px 45px;
+    text-align: center;
+  }
   &__icon {
     position: relative;
     margin-right: 15px;
+    @media (min-width: $sm) {
+      margin-right: 0;
+      margin-bottom: 15px;      
+    }
     img {
       display: block;
       z-index: 2;
@@ -290,6 +444,10 @@
       @include trans(.5s);
       margin: 0;
       font-size: 1.143em;
+      @media (min-width: $sm) {
+        height: 50px;
+        margin-bottom: 15px;        
+      }
     }
     p {
       font-size: 0.857em;
