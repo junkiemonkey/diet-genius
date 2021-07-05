@@ -9,7 +9,10 @@
         <img src="/logo.svg" class="quiz__logo" alt="Diet Genius"/>
       </picture>
     </header>
-    <h1 class="quiz__title content__title">Demographic Profile</h1>
+    <h1 class="quiz__title content__title">
+      <span>Demographic Profile</span>
+      <span>Please enter your email address to get your body profile results:</span>
+    </h1>
     <div class="jsQuizSteps swiper-container steps">
       <div class="swiper-wrapper">
         <div class="swiper-slide steps__slide">What is your gender?</div>
@@ -154,7 +157,7 @@
                   <figcaption class="radiobutton__caption">
                     <h3>Intensive</h3>
                     <p>Intensive training every day or 2 times a
-                                                                  day</p>
+                      day</p>
                   </figcaption>
                 </figure>
               </label>
@@ -234,6 +237,7 @@
         <button type="submit" class="button form__submit jsSubmit">Calculate</button>
       </div>
     </form>
+    {% include "email.njk" %}
     <footer class="quiz__footer">
       <div class="footer__copyright">
         <p>Copyright © 2020 MyDietGenius.</p>

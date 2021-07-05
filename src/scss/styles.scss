@@ -10,6 +10,8 @@
 @import "components/features";
 @import "components/footer";
 @import "components/quiz";
+@import "components/modal";
+@import "components/page";
 
 .wrapper {
   min-height: 100%;
@@ -42,47 +44,7 @@
   }
 }
 
-.page {
-  flex: 1 0 auto;
-  position: relative;
-  @media (min-width: $md) {
-    width: 50%;    
-    // flex: 0 0 50%;
-  }
 
-  &__more {
-    display: flex;
-    text-decoration: none;
-    @include abs(auto, auto, 15px, 50px);
-    color: #366EFF;
-    align-items: center;
-
-    @media (min-width: $md) {
-      bottom: 100px;
-      left: 85px;       
-    }    
-
-
-    &:before {
-      content: '';
-      @include block(30px);
-      @include bg-size('more-icon.svg');
-      margin-right: 24px;
-    }
-  }
-
-  &__social {
-    display: none;
-    @media (min-width: $md) {
-      display: flex;
-      bottom: 33px;
-      justify-content: flex-start;
-      padding-left: 61px;
-      padding-bottom: 0;
-    }
-  }
-
-}
 
 .full {
   .banner {    
@@ -99,6 +61,19 @@
   .features {
     max-height: 1700px;
     margin: 50px 0;
+    @media (min-width: $sm) {
+      margin: 50px auto;      
+    }
+    @media (min-width: $md) {
+      margin-top: 60px;
+      
+    }
+    @media (min-width: $md) {
+      margin-top: 90px;      
+    }
+    @media (min-width: $xxl) {
+      margin-bottom: 0;      
+    }
 
   }
 
@@ -123,6 +98,10 @@
     }
 
     &__actions {
+      @media (min-width: $xxl) {
+        margin-top: 0;   
+        
+      }
       .button {
         margin: 0 auto;
       }
@@ -132,16 +111,12 @@
     }
   }
 
-  .page__more {
-    display: none;
-  }
-
-  .page__social {
+  .page__actions {
     display: none;
   }
 
   .footer {
     max-height: 300px;
-    padding: 30px 15px 34px; 
+    padding: 30px 15px; 
   }
 }

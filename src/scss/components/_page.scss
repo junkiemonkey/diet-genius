@@ -1,0 +1,65 @@
+.page {
+  flex: 1 0 auto;
+  position: relative;
+  @media (min-width: $md) {
+    width: 50%;    
+    // flex: 0 0 50%;
+  }
+
+  &__actions {
+    @include abs(auto, auto, 15px, 50px);
+    @media (min-width: $md) {
+      left: 85px;  
+      bottom: 33px;           
+    }   
+    @media (min-width: $lg) {
+      display: flex;      
+      align-items: center;
+    }
+    @media (min-width: $xl) {
+      left: 120px;      
+    }
+  }
+
+  &__more {
+    display: flex;
+    text-decoration: none;    
+    color: #366EFF;
+    align-items: center;
+    font-size: 14px;
+    white-space: nowrap;
+
+    &:before {
+      content: '';
+      @include block(30px);
+      @include bg-size('more-icon.svg');
+      margin-right: 24px;
+    }
+  }
+
+  &__social {
+    display: none;
+    @media (min-width: $sm) {
+      position: relative;
+      display: flex;
+      // bottom: 33px;
+      justify-content: flex-start;
+      // padding-left: 85px;
+      padding: 0;
+      margin-top: 33px;
+      .quiz__social {
+        width: 100%;
+        justify-content: flex-start;
+        a {
+          width: auto;
+        }
+      }  
+    }
+    @media (min-width: $lg) {
+      margin-top: 0;
+      margin-left: 80px;      
+    }
+  
+  }
+
+}

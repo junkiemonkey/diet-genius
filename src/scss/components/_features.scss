@@ -4,11 +4,34 @@
   overflow: hidden;
   max-height: 0;
   @include trans($transition-time-long);
+  @media (min-width: $sm) {
+    max-width: 342px;
+    margin: 0 auto;    
+  }
+  @media (min-width: $xxl) {
+    max-width: 720px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+  }
 }
 
 .feature {
   margin: 0 0 60px;
   padding: 0 18px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @media (min-width: $md) {
+    margin-bottom: 80px;    
+  }
+  @media (min-width: $lg) {
+    margin-bottom: 60px;    
+  }
+  @media (min-width: $xxl) {
+    width: 320px;
+    margin-bottom: 80px;
+  }
 
   &__img {
     margin-bottom: 30px;

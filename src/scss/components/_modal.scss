@@ -1,0 +1,82 @@
+.modal {
+  @include fixed-point(0, 0);
+  @include size(100%);
+  z-index: 100;
+  background-color: rgba(#000, .5);
+  backdrop-filter: blur(10px);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  @include trans(.3s ease .2s);
+  &--open {
+    transition-delay: 0s;
+    visibility: visible;
+    opacity: 1;
+    .modal__dialog {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      transition-delay: .3s;
+    }
+  }
+  &__dialog {
+    @include trans(.5s ease);
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    text-align: center;
+    position: relative;
+    border: none;
+    display: block;
+    margin: 0;
+    padding: 50px 20px 50px;
+    border-radius: 20px;
+    max-width: 720px;
+    width: 100%;
+    background: #fff;
+    @media (min-width: $sm) {
+      padding: 70px 60px 60px;
+    }
+  }
+  &__close {
+    @include abs(5px, 10px);
+    @include block(40px);
+    @include bg-size('close-icon-modal.svg');
+    @media (min-width: $sm) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+  &__button {
+    width: 240px;
+  }
+  &__title {
+    font-size: 20px;
+    font-family: $font-montserrat;
+    margin: 0 0 30px;
+    font-weight: 600;
+    background-color: #fff;
+    background-size: 100%;
+    color: #FE4954;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    @supports (-webkit-background-clip: text) {
+      background-image: radial-gradient(circle at 100% 100%, #FE4954 0%, #FFD15A 100%);
+    }
+    @media (min-width: $sm) {
+      font-size: 36px;   
+      margin-bottom: 58px;   
+    }  
+  }  
+  &__text {
+    margin-bottom: 30px;
+    @media (min-width: $sm) {
+      font-size: 18px;   
+      margin-bottom: 72px;   
+    }  
+  }
+}

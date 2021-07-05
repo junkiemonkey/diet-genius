@@ -3,6 +3,13 @@
   @media (min-width: $md) {
     padding: 54px 85px 40px;     
   }
+  @media (min-width: $xl) {
+    padding: 120px 120px 30px;    
+  }
+  @media (min-width: $xxl) {
+    padding-top: 145px;
+    
+  }
 
   &__title {
     font-size: 2.857em;
@@ -14,13 +21,19 @@
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    @include trans($transition-time-long);
+    @include trans($transition-time);
     @media (min-width: $md) {
       margin-bottom: 45px;
     }
     @media (min-width: $md) {
-      font-size: 3.571em; 
-      
+      font-size: 3.571em;       
+    }
+    @media (min-width: $lg) {
+      font-size: 3.333em;      
+    }
+    @media (min-width: $xxl) {
+      font-size: 65px;      
+      margin: 0 60px 45px 40px;
     }
 
     @supports (-webkit-background-clip: text) {
@@ -30,15 +43,26 @@
 
   &__text {
     position: relative;
-    max-width: 360px;
+    @media (min-width: $xxl) {
+      margin-left: 40px;
+    }
+    
+    
     p {
       &.short {
         display: block;
+        max-width: 360px;
+        @media (min-width: $xxl) {
+          max-width: 520px;      
+        }
       }
 
       &.long {
         display: none;
         max-width: 340px;
+        @media (min-width: $xxl) {
+          max-width: 640px;      
+        }
       }
     }
 
@@ -48,11 +72,19 @@
     margin-top: 25px;
     display: flex;
     align-items: center;
+    @include trans(all .3s ease .3s);
     @media (min-width: $sm) {
       margin-top: 50px;      
     }
     @media (min-width: $md) {
       margin-top: 73px;      
+    }
+    @media (min-width: $xl) {
+      margin-top: 105px;      
+    }
+    @media (min-width: $xxl) {
+      margin-left: 40px;   
+      
     }
     span {
       font-size: 15px;

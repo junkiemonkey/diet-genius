@@ -8,46 +8,18 @@ import "../scss/styles.scss";
   const prevButton = document.querySelector('.jsBack');
   const submitButton = document.querySelector('.jsSubmit');
   const form = document.querySelector('.jsQuizForm');
+  const emailForm = document.querySelector('.jsEmailForm');
   const moreLink = document.querySelector('.jsMoreLink');
   const wrapper = document.querySelector('.wrapper');
   const menuToggle = document.querySelector('.jsMenuToggle');
   const nav = document.querySelector('.jsNav');
   const navClose = document.querySelector('.jsNavClose');
+  const modal = document.querySelector('.jsModal');
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries()); 
 
   const isTouchDevice = 'ontouchstart' in window || 'onmsgesturechange' in window;
 
-  if (isTouchDevice) {
-    const mc = new Hammer.Manager(document.body, {
-      recognizers: [
-        [Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]
-      ]
-    });
-    mc.on('swipeup', e => {
-      if (!wrapper.classList.contains('full')) wrapper.classList.add('full');
-    });  
-  } else {
-    window.addEventListener('wheel', e => {
-      if (e.deltaY > 0 && !wrapper.classList.contains('full')) {
-        wrapper.classList.add('full');
-      }
-    })
-  }  
-
-  moreLink?.addEventListener('click', e => {
-    e.preventDefault();
-    wrapper.classList.add('full');
-  });
-
-  menuToggle?.addEventListener('click', e => {
-    e.preventDefault();
-    nav?.classList.add('nav--open');
-  });
-
-  navClose?.addEventListener('click', e => {
-    e.preventDefault();
-    nav?.classList.remove('nav--open');
-  });
-  
   const steps = new Swiper('.jsQuizSteps', {
     speed: 600,
     slidesPerView: "auto",
@@ -71,7 +43,51 @@ import "../scss/styles.scss";
     // effect: 'fade',
     // initialSlide: 5
   });
+
+  if (params.complete) {
+    modal.classList.add('modal--open');
+  }
+
+  if (isTouchDevice) {
+    const mc = new Hammer.Manager(document.body, {
+      recognizers: [
+        [Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]
+      ]
+    });
+    mc.on('swipeup', e => {
+      if (!wrapper.classList.contains('full')) wrapper.classList.add('full');
+    });  
+  } else {
+    window.addEventListener('wheel', e => {
+      if (e.deltaY > 0 && !wrapper.classList.contains('full')) {
+        wrapper.classList.add('full');
+      }
+    })
+  }
   
+  modal.addEventListener('click', e => {
+    e.preventDefault();
+    if (e.target.attributes['data-close']) {      
+      modal.classList.remove('modal--open');
+    }
+  })
+
+  moreLink?.addEventListener('click', e => {
+    e.preventDefault();
+    wrapper.classList.add('full');
+  });
+
+  menuToggle?.addEventListener('click', e => {
+    e.preventDefault();
+    nav?.classList.add('nav--open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  navClose?.addEventListener('click', e => {
+    e.preventDefault();
+    nav?.classList.remove('nav--open');
+    document.body.style.overflow = null;
+  }); 
 
   nextButton?.addEventListener('click', () => {
     steps.slideNext();
@@ -96,13 +112,20 @@ import "../scss/styles.scss";
     }
   });
 
-  
+  emailForm?.addEventListener('input', e => {
+    if (e.target.value && /\S+@\S+\.\S+/.test(e.target.value)) {
+      emailForm[1].disabled = false;
+    } else {
+      emailForm[1].disabled = true;
+    }
+  })
 
   form?.addEventListener('change', handleFormChange);
   form?.addEventListener('input', handleFormChange);
 
   form?.addEventListener('submit', e => {
     e.preventDefault();
+    wrapper.classList.add('submitted');
   })
 
   function handleFormChange(e) {

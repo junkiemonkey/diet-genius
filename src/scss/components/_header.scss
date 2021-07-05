@@ -3,9 +3,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 15px;
+  @media (min-width: $sm) {
+    padding: 30px 50px 20px;    
+  }
   @media (min-width: $md) {
     padding: 60px 52px 0 27px;
     align-items: flex-start;    
+  }
+  @media (min-width: $lg) {
+    padding-left: 63px;    
+  }
+  @media (min-width: $xxl) {
+    padding-left: 103px;    
   }
 
   &__logo {

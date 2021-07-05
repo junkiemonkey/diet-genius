@@ -2,6 +2,9 @@
   flex: 1 0 auto;
   position: relative;
   padding-bottom: 70px;
+  @media (min-width: $lg) {
+    padding-bottom: 100px;    
+  }
 
   &__header {
     padding: 20px 0;
@@ -15,6 +18,9 @@
       align-items: center;
       justify-content: center;
       @include abs-point(14px, 0px);
+      @media (min-width: $lg) {
+        left: 10px;        
+      }
     }
   }
 
@@ -34,11 +40,24 @@
   &__title {
     text-align: center;
     display: none;
-    margin: 0 0 30px;
+    margin: 0 auto 30px;
     font-weight: 600;
+    transition: none;
+    max-width: 720px;
+    font-size: 25px;
+    padding: 0 20px;
+    span {
+      &:last-child {
+        display: none;
+      }
+    }
     @media (min-width: $sm) {
       display: block;
       font-size: 40px;
+      padding: 0;
+    }
+    @media (min-width: $lg) {
+      font-size: 36px;      
     }
   }
 
@@ -46,6 +65,7 @@
     display: flex;
     padding: 0 0 13px;
     justify-content: center;
+    align-items: center;
     width: 100%;
     @include abs(auto, auto, 0, 0);
     @media (min-width: $sm) {
@@ -55,13 +75,24 @@
       padding: 0 85px 15px; 
       justify-content: space-between;
     }
+    @media (min-width: $lg) {
+      padding-bottom: 33px;      
+    }
+    @media (min-width: $xl) { 
+      padding: 0 120px 33px;   
+    }
+    @media (min-width: $xxl) { 
+      padding: 0 160px 33px;   
+    }
     .footer__copyright {
       display: none;
       @media (min-width: $md) {
         display: block;    
         margin-bottom: 0;    
         width: 30%;
+        font-size: 14px;
       }
+
     }
     .footer__social {
       display: none;
@@ -86,6 +117,8 @@
       text-decoration: none;
       color: #31353E;
       width: 50%;
+      font-size: 14px;
+
       &:first-child {
         padding-right: 24px;
         justify-content: flex-end;
@@ -108,6 +141,9 @@
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    @media (min-width: $sm) {
+      display: none;      
+    }
 
     &-bullet {
       @include block(5px);
@@ -197,6 +233,9 @@
 
 .form {
   margin-top: 15px;
+  @media (min-width: $sm) {
+    margin-top: 0;    
+  }
 
   &__pages {
     @media (min-width: $sm) {
@@ -233,6 +272,21 @@
           }
         }      
       }
+      @media (min-width: $lg) {
+        padding: 40px 0 !important;  
+        .form__label {
+          margin: 0 7px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }      
+      }
+      @media (min-width: $xl) {
+        padding: 100px 0 !important;      
+      }
+      @media (min-width: $xl) {
+        padding: 180px 0 !important;      
+      }
     }
     &--active {
       z-index: 2;
@@ -240,6 +294,12 @@
     @media (min-width: $sm) {
       padding: 40px 0;    
       min-height: 330px;  
+    }
+    @media (min-width: $xl) {
+      padding: 90px 0 70px;      
+    }
+    @media (min-width: $xxl) {
+      padding: 180px 0 150px;      
     }
   }
 
@@ -250,7 +310,11 @@
     .button {
       margin: 0 10px;      
       align-items: center;  
-      font-size: 1.286em;    
+      font-size: 18px;   
+      @media (min-width: $sm) {
+        margin: 0 16px;        
+      }
+       
       span, img {
         display: block;
       }
@@ -322,7 +386,7 @@
         }
         &__caption {
           h3 {
-            font-size: 1.286em;
+            font-size: 18px;
             height: auto;
             margin: 0;
           }          
@@ -333,9 +397,9 @@
         }
       }
     }
-    @media (min-width: $sm) {
-      &:first-child:nth-last-child(3),
-      &:first-child:nth-last-child(3) ~ .form__label {
+    &:first-child:nth-last-child(3),
+    &:first-child:nth-last-child(3) ~ .form__label {
+      @media (min-width: $sm) {
         margin: 0 20px;
         .radiobutton {
           width: 200px;
@@ -346,9 +410,16 @@
               height: auto;
             }
           }
-        }
+        }      
       }
+      @media (min-width: $lg) {
+        .radiobutton {
+          height: 210px;
+        }        
+      }
+        
     }
+    
   }
 
   &__block {
@@ -361,6 +432,12 @@
     position: relative;
     @media (min-width: $md) {
       margin-top: 80px;      
+    }
+    @media (min-width: $lg) {
+      max-width: 480px;     
+    }
+    @media (min-width: $md) {
+      max-width: 640px;     
     }
     &:after {
       content: '';
@@ -414,9 +491,12 @@
   @include trans(.5s);   
   @media (min-width: $sm) {
     flex-direction: column;
-    width: 158px;    
+    @include size(158px, 265px);
     padding: 20px 11px 45px;
     text-align: center;
+  }
+  @media (min-width: $lg) {
+    padding-bottom: 20px;    
   }
   &__icon {
     position: relative;
@@ -446,15 +526,72 @@
       font-size: 1.143em;
       @media (min-width: $sm) {
         height: 50px;
-        margin-bottom: 15px;        
+        margin-bottom: 15px;  
+        font-size: 18px;     
+        line-height: 25px; 
       }
     }
     p {
       font-size: 0.857em;
+      @media (min-width: $sm) {
+        line-height: 25px;        
+      }
     }
   }
 
   &:hover {
-    box-shadow: rgba(65, 60, 125, 0.102) 0 20px 20px;
+    box-shadow: rgba(65, 60, 125, 0.102) 0 20px 20px, 
+    rgba(65, 60, 125, 0.102) 0 -5px 10px;
+
+    cursor: pointer;
+  }
+}
+
+.email {
+  margin-bottom: 60px;
+  display: none;
+  .form__block {
+    margin: 114px auto 60px;
+    max-width: 480px;
+    &:after {
+      content: none;
+    }
+    input {
+      border: 1px solid #DFDFDF;
+      border-radius: 4px;
+    }
+  }  
+  .button {
+    width: 240px;
+  }
+}
+
+.submitted {
+  .form, .steps {
+    display: none;
+  }
+  .email {
+    display: block;
+  }
+  .quiz__title {
+    display: block;
+    margin-top: 100px;
+    @media (min-width: $sm) {
+      margin-top: 120px;      
+    }
+    @media (min-width: $md) {
+      margin-top: 50px;      
+    }    
+    @media (min-width: $xl) {
+      margin-top: 120px;      
+    }
+    span {
+      &:last-child {
+        display: block;
+      }
+      &:first-child {
+        display: none;
+      }
+    }
   }
 }
