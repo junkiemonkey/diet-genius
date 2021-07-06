@@ -78,7 +78,7 @@ module.exports = {
         options: {
           name: '[name].[ext]?[contenthash]',
           outputPath: 'assets/images',
-          publicPath: '/assets/images'
+          publicPath: 'assets/images'
         }
       },
       {
