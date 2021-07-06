@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diet Genius</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@500;600&display=swap"
+      rel="stylesheet">
+  <link href="css/vendors.css?a998bed1e19170129258" rel="stylesheet"><link href="css/style.css?a998bed1e19170129258" rel="stylesheet"></head>
+  <body>
+    <div class="wrapper"> 
+  <div class="quiz">
+    <header class="quiz__header">
+      <a href="/" class="back-link"><img src="/assets/images/arr-back.svg?dc91a4cd552e8279de6e22e558b84d12" alt="Back">
+      </a>
+      <picture>
+        <source media="(min-width: 760px)" srcset="/assets/images/logo-s.svg?bc875d039dfe3568a46323e2682d610b"/>
+        <img src="/assets/images/logo.svg?1b8cd679ba4d2cf886fa1b15c91f7d25" class="quiz__logo" alt="Diet Genius"/>
+      </picture>
+    </header>
+    <h1 class="quiz__title content__title">
+      <span>Demographic Profile</span>
+      <span>Please enter your email address to get your body profile results:</span>
+    </h1>
+    <div class="jsQuizSteps swiper-container steps">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide steps__slide">What is your gender?</div>
+        <div class="swiper-slide steps__slide">What's your height?</div>
+        <div class="swiper-slide steps__slide">What's your weight?</div>
+        <div class="swiper-slide steps__slide">What's your age?</div>
+        <div class="swiper-slide steps__slide">Your physical activity?</div>
+        <div class="swiper-slide steps__slide">Weight that you want to reach?</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <form class="form jsQuizForm">
+      <div class="jsFormPages form__pages swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide form__page">
+            <fieldset class="form__group">
+              <label class="form__label form__label--big">
+                <input type="radio" name="gender" value="male">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon"><img src="/assets/images/male.png?4886ae736a7258e85b160bdb441299ae" alt="">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Male</h>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label form__label--big">
+                <input type="radio" name="gender" value="female">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon"><img src="/assets/images/female.png?33de76babe53f7636b7bb3069a5613a8" alt="">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Female</h3>
+                  </figcaption>
+                </figure>
+              </label>
+            </fieldset>
+          </div>
+          <div class="swiper-slide form__page">
+            <div class="form__block">
+              <input type="text" name="height" placeholder="Ex: 175" data-number>
+              <select name="height_unit">
+                <option value="cm">cm</option>
+                <option value="kg">ft</option>
+              </select>
+            </div>
+          </div>
+          <div class="swiper-slide form__page">
+            <div class="form__block">
+              <input type="text" name="weight" placeholder="Ex: 80" data-number>
+              <select name="weight_unit">
+                <option value="kg">kg</option>
+                <option value="lb">lb</option>
+              </select>
+            </div>
+          </div>
+          <div class="swiper-slide form__page">
+            <div class="form__block">
+              <input type="text" name="age" placeholder="Ex: 33" data-number>
+              <select name="age_unit" disabled>
+                <option value="kg">year</option>
+              </select>
+            </div>
+          </div>
+          <div class="swiper-slide form__page form__page--pad form__page--scroll">
+            <fieldset class="form__group">
+              <label class="form__label">
+                <input type="radio" name="activity" value="low">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/low.svg?442ec882729e53678484d99e01a2d42b" alt="Low">
+                    <img src="/assets/images/low-active.svg?71b51e84e2f426bd42ff1865fbfdab1e" alt="Low">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Low active</h3>
+                    <p>Moderate training 1&nbsp;times a week</p>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label">
+                <input type="radio" name="activity" value="sedentary">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/sed.svg?4dc6d1d5e997ea7651720bf8554f5b8f" alt="sedentary">
+                    <img src="/assets/images/sed-active.svg?98fba612985c2bc632b860b2d7652e2d" alt="sedentary">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Sedentary</h3>
+                    <p>Moderate training 3&nbsp;times a week
+                    </p>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label">
+                <input type="radio" name="activity" value="somewhat">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/som.svg?a05497a83efd0f4f284f8e360bb31f4e" alt="Somewhat Active">
+                    <img src="/assets/images/som-active.svg?b6c6f67287f903b2dfaba90370775f9d" alt="Somewhat Active">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Somewhat Active</h3>
+                    <p>Moderate training 5&nbsp;times a week
+                    </p>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label">
+                <input type="radio" name="activity" value="active">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/act.svg?720ca946df347891c12b40dae1f3c69d" alt="Active">
+                    <img src="/assets/images/act-active.svg?a2e59f302663da611014276b33edcec6" alt="Active">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Active</h3>
+                    <p>Intensive training 5&nbsp;times a week
+                    </p>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label">
+                <input type="radio" name="activity" value="very active">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/ver.svg?25aef4fac36186794ce6fbdbd4e5819c" alt="Very Active">
+                    <img src="/assets/images/ver-active.svg?3ce211a5e8cb37a7abe6067766a4b45f" alt="Very Active">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Very Active</h3>
+                    <p>Workout everyday</p>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label">
+                <input type="radio" name="activity" value="intensive">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/int.svg?7eed4d6827f2bf43458299cfab8c0d9a" alt="Intensive">
+                    <img src="/assets/images/int-active.svg?ef9c4cd763faae36154db3b79a3e418f" alt="Intensive">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Intensive</h3>
+                    <p>Intensive training every day or 2 times a
+                      day</p>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label">
+                <input type="radio" name="activity" value="superman">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/sup.svg?6f2a4d13ab1da3de864d86369bc8d327" alt="Superman">
+                    <img src="/assets/images/sup-active.svg?9d09d0bea818df67907297efb32ff5ff" alt="Superman">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>Superman</h3>
+                    <p>Daily exercise +&nbsp;physical work</p>
+                  </figcaption>
+                </figure>
+              </label>
+            </fieldset>
+          </div>
+          <div class="swiper-slide form__page form__page--pad">
+            <fieldset class="form__group">
+              <label class="form__label">
+                <input type="radio" name="reach" value="lose">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/lose.svg?eef4373745f2f83298aaa54eaeb143cb" alt="lose">
+                    <img src="/assets/images/lose-active.svg?d8d98b70435861c7a1aad97b6f2bc003" alt="lose">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>To lose weight</h3>
+                    <p>I think I’m overweight</p>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label">
+                <input type="radio" name="reach" value="hold">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/hold.svg?cfa7ecfd101650a5f9c0772b0bc36d62" alt="hold">
+                    <img src="/assets/images/hold-active.svg?d8686216467b1087c5963d83830dbdce" alt="hold">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>To hold weight</h3>
+                    <p>My body is perfect now</p>
+                  </figcaption>
+                </figure>
+              </label>
+              <label class="form__label">
+                <input type="radio" name="reach" value="gain">
+                <figure class="radiobutton">
+                  <div class="radiobutton__icon">
+                    <img src="/assets/images/gain.svg?589f0d2392dc7216c7cab59d4dde9e69" alt="Gain">
+                    <img src="/assets/images/gain-active.svg?549d97ba58f6962a33887ea3699c7068" alt="Gain">
+                  </div>
+                  <figcaption class="radiobutton__caption">
+                    <h3>To gain weight</h3>
+                    <p>I consider myself thin</p>
+                  </figcaption>
+                </figure>
+              </label>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="form__actions">
+        <button type="button" class="button button--white jsBack">
+          <div class="button__wrapper">
+            <img src="/assets/images/back-icon.svg?2c51476b86f3d167b9ac89fb0c6a5bb8" alt="Back"/>
+            <span>Back</span>
+          </div>
+        </button>
+        <button type="button" class="button jsNext" disabled>
+          <div class="button__wrapper">
+            <span>Next</span>
+            <img src="/assets/images/next-icon.svg?981d43c2d35a64a1591b6e90091d4453" alt="Next"/>
+          </div>
+        </button>
+        <button type="submit" class="button form__submit jsSubmit">Calculate</button>
+      </div>
+    </form>
+    <form class="email jsEmailForm">
+  <div class="form__block">
+    <input autofocus="autofocus" type="email" name="email" placeholder="Email"/>
+  </div>
+  <div class="form__actions">
+    <button disabled="disabled" type="submit" class="button">Confirm</button>
+  </div>
+</form>
+    <footer class="quiz__footer">
+      <div class="footer__copyright">
+        <p>Copyright © 2020 MyDietGenius.</p>
+        <p>All rights reserved.</p>
+      </div>
+      <div class="quiz__social">
+        <a href=""><img src="/assets/images/apple-icon.svg?a2b0b8df9dca06791dce1d9de0a6b1d8" alt="Apple">
+          <span>App on iOS</span>
+        </a>
+        <a href=""><img src="/assets/images/play-icon.svg?b1fb85108a9ab593eda14474d1e1e80d" alt="Google">
+          <span>App on Android</span>
+        </a>
+      </div>
+      <div class="footer__social">
+        <a href=""><img src="/assets/images/fb-icon.svg?87bb547a5400db6e2912e9f00b691ba3" alt="Facebook">
+        </a>
+        <a href=""><img src="/assets/images/in-icon.svg?e1acb8c1fe4e2665cef63f7b368d3791" alt="Instagram">
+        </a>
+        <a href=""><img src="/assets/images/tw-icon.svg?22377f329e01bbedafdfec4d4b1a87dd" alt="Twitter">
+        </a>
+      </div>
+    </footer>
+  </div>
+
+      </div>
+      <div class="modal jsModal">
+  <dialog class="modal__dialog">
+    <a href="" data-close="data-close" class="modal__close"></a>
+    <h2 class="modal__title">We will send you an email with&nbsp;the test results</h2>
+    <div class="modal__text">
+      <p>Check your mail.</p>
+      <p>If you don't see our email, it&nbsp;may&nbsp;have&nbsp;gone&nbsp;to&nbsp;spam.</p>
+    </div>
+    <button data-close="data-close" type="button" class="button modal__button">OK</button>
+  </dialog>
+</div>
+    <script src="js/vendors.bundle.js?a998bed1e19170129258"></script><script src="js/main.bundle.js?a998bed1e19170129258"></script></body>
+  </html>
