@@ -1,5 +1,4 @@
 import Swiper from 'swiper/bundle';
-import Hammer from 'hammerjs';
 import 'swiper/swiper.scss';
 import "../scss/styles.scss";
 
@@ -48,15 +47,16 @@ import "../scss/styles.scss";
     modal.classList.add('modal--open');
   }
 
-  if (isTouchDevice) {
-    const mc = new Hammer.Manager(document.body, {
-      recognizers: [
-        [Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]
-      ]
+  if (isTouchDevice) {    
+    let touchstartY = null;
+    window.addEventListener('touchstart', e => {
+      touchstartY = e.changedTouches[0].screenY;      
     });
-    mc.on('swipeup', e => {
-      if (!wrapper.classList.contains('full')) wrapper.classList.add('full');
-    });  
+    window.addEventListener('touchend', e => {
+      if (touchstartY > e.changedTouches[0].screenY) {
+        wrapper.classList.add('full');
+      }
+    })
   } else {
     window.addEventListener('wheel', e => {
       if (e.deltaY > 0 && !wrapper.classList.contains('full')) {

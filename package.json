@@ -31,8 +31,13 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.1"
   },
+  
+  
+  
+  
+  
+  
   "dependencies": {
-    "hammerjs": "^2.0.8",
     "swiper": "^6.7.5"
   }
 }
