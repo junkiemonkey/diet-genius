@@ -24,7 +24,6 @@ import "../scss/styles.scss";
     slidesPerView: "auto",
     spaceBetween: 36,
     centeredSlides: true,
-    // centerInsufficientSlides: true,
     slideActiveClass: 'steps__slide--active',
     pagination: {
       el: '.swiper-pagination',
@@ -53,6 +52,7 @@ import "../scss/styles.scss";
       touchstartY = e.changedTouches[0].screenY;      
     });
     window.addEventListener('touchend', e => {
+      wrapper.classList.add('full');
       if (touchstartY > e.changedTouches[0].screenY) {
         wrapper.classList.add('full');
       }
