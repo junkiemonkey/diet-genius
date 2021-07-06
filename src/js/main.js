@@ -48,13 +48,12 @@ import "../scss/styles.scss";
 
   if (isTouchDevice) {    
     let touchstartY = null;
+
     window.addEventListener('touchstart', e => {
-      wrapper.classList.add('full');
       touchstartY = e.changedTouches[0].screenY;      
     });
     window.addEventListener('touchend', e => {
-      wrapper.classList.add('full');
-      if (touchstartY > e.changedTouches[0].screenY) {
+      if (touchstartY > e.changedTouches[0].screenY && Math.abs(touchstartY) - Math.abs(e.changedTouches[0].screenY) > 200) {
         wrapper.classList.add('full');
       }
     })
