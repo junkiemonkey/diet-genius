@@ -49,6 +49,7 @@ import "../scss/styles.scss";
   if (isTouchDevice) {    
     let touchstartY = null;
     window.addEventListener('touchstart', e => {
+      wrapper.classList.add('full');
       touchstartY = e.changedTouches[0].screenY;      
     });
     window.addEventListener('touchend', e => {

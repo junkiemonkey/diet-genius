@@ -9,13 +9,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  visibility: hidden;
-  opacity: 0;
-  @include trans(.3s ease .2s);
+  display: none;
   &--open {
-    transition-delay: 0s;
-    visibility: visible;
-    opacity: 1;
+    display: block;
     .modal__dialog {
       transform: translate3d(0, 0, 0);
       opacity: 1;
