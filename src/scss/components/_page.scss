@@ -1,9 +1,17 @@
 .page {
   flex: 1 0 auto;
   position: relative;
+  @media (min-width: $sm) {
+    padding-bottom: 120px;
+  }
   @media (min-width: $md) {
     width: 50%;    
+    
     // flex: 0 0 50%;
+  }
+  @media (min-width: $lg) {
+    padding-bottom: 60px;
+    
   }
 
   &__actions {

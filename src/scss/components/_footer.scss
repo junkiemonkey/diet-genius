@@ -4,7 +4,7 @@
   // display: none;
   overflow: hidden;
   max-height: 0;
-  @include trans(0s ease $transition-time-long);
+  @include trans(0s ease);
 
   &__copyright {
     margin-bottom: 40px;

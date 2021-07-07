@@ -5,13 +5,13 @@
   background-color: rgba(#000, .5);
   backdrop-filter: blur(10px);
   padding: 0 20px;
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   display: none;
   &--open {
-    display: block;
+    display: flex;
     .modal__dialog {
       transform: translate3d(0, 0, 0);
       opacity: 1;

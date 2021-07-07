@@ -59,11 +59,20 @@ import "../scss/styles.scss";
     })
   } else {
     window.addEventListener('wheel', e => {
+      if (e.deltaY < 0 && wrapper.classList.contains('full') && window.pageYOffset === 0) {
+        wrapper.classList.remove('full');
+      }
       if (e.deltaY > 0 && !wrapper.classList.contains('full')) {
         wrapper.classList.add('full');
       }
     })
   }
+
+  window.addEventListener('scroll', e => {
+    if (window.pageYOffset === 0 && wrapper.classList.contains('full')) {
+      wrapper.classList.remove('full');
+    }
+  })
   
   modal.addEventListener('click', e => {
     e.preventDefault();

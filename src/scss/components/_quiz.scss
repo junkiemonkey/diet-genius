@@ -150,14 +150,15 @@
       margin: 0 5px;
       background-color: #C7C7CB;
       border-radius: 5px;
-      transform-origin: 0 50%;
+      transform-origin: 50% 50%;
       @include trans(.6s);
       position: relative;
 
       &-active {
         background-color: $blue;
         // width: 15px;
-        transform: scale(4, 1);
+        transform: scale(3, 1);
+        margin: 0 10px;
         border-radius: 25%;
         z-index: 1;
       }

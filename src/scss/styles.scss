@@ -123,6 +123,7 @@
 
   .footer {
     max-height: 300px;
-    padding: 30px 15px; 
+    padding: 30px 15px;
+    transition-delay: $transition-time-long;
   }
 }
