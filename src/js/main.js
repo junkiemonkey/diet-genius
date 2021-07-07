@@ -53,7 +53,7 @@ import "../scss/styles.scss";
       touchstartY = e.changedTouches[0].screenY;      
     });
     window.addEventListener('touchend', e => {
-      if (touchstartY > e.changedTouches[0].screenY && Math.abs(touchstartY) - Math.abs(e.changedTouches[0].screenY) > 200) {
+      if (touchstartY > e.changedTouches[0].screenY && Math.abs(touchstartY) - Math.abs(e.changedTouches[0].screenY) > 100) {
         wrapper.classList.add('full');
       }
     })
