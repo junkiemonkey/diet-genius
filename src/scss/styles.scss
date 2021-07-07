@@ -32,14 +32,20 @@
   @media (min-width: $md) {
     @include fixed(0, 0);
     @include block(50%, 100%);
-    @include bg-size('banner-m.png', cover);
+    @include bg-size('banner-m.jpg', cover);
     &:after {
       content: '';
       @include abs-point(0, 0);
       @include block(100%);
-      @include bg-size('banner-m-1.png', cover);
+      @include bg-size('banner-m-1.jpg', cover);
       opacity: 0;
       @include trans($transition-time-long);
+    }
+  }
+  @media (min-width: $xxl) {
+    @include bg-size('banner-l.jpg', cover);
+    &:after {
+      @include bg-size('banner-l-1.jpg', cover);
     }
   }
 }
