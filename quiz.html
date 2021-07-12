@@ -12,7 +12,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@500;600&display=swap"
       rel="stylesheet">
-  <link href="css/vendors.css?9a922733d3b66e25aec8" rel="stylesheet"><link href="css/style.css?9a922733d3b66e25aec8" rel="stylesheet"></head>
+  <link href="css/vendors.css?3a7c9ff9d5dca332e70a" rel="stylesheet"><link href="css/style.css?3a7c9ff9d5dca332e70a" rel="stylesheet"></head>
   <body>
     <div class="wrapper"> 
   <div class="quiz">
@@ -43,8 +43,8 @@
       <div class="jsFormPages form__pages swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide form__page">
-            <fieldset class="form__group">
-              <label class="form__label form__label--big">
+            <div class="form__group">
+              <button type="button" class="form__label form__label--big">
                 <input type="radio" name="gender" value="male">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon"><img src="assets/images/male.png?4886ae736a7258e85b160bdb441299ae" alt="">
@@ -53,8 +53,8 @@
                     <h3>Male</h>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label form__label--big">
+              </button>
+              <button type="button" class="form__label form__label--big">
                 <input type="radio" name="gender" value="female">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon"><img src="assets/images/female.png?33de76babe53f7636b7bb3069a5613a8" alt="">
@@ -63,8 +63,8 @@
                     <h3>Female</h3>
                   </figcaption>
                 </figure>
-              </label>
-            </fieldset>
+              </button>
+            </div>
           </div>
           <div class="swiper-slide form__page">
             <div class="form__block">
@@ -94,7 +94,7 @@
           </div>
           <div class="swiper-slide form__page form__page--pad form__page--scroll">
             <fieldset class="form__group">
-              <label class="form__label">
+              <button class="form__label" type="button">
                 <input type="radio" name="activity" value="low">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -106,8 +106,8 @@
                     <p>Moderate training 1&nbsp;times a week</p>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label">
+              </button>
+              <button class="form__label" type="button">
                 <input type="radio" name="activity" value="sedentary">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -120,8 +120,8 @@
                     </p>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label">
+              </button>
+              <button class="form__label" type="button">
                 <input type="radio" name="activity" value="somewhat">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -134,8 +134,8 @@
                     </p>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label">
+              </button>
+              <button class="form__label" type="button">
                 <input type="radio" name="activity" value="active">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -148,8 +148,8 @@
                     </p>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label">
+              </button>
+              <button class="form__label" type="button">
                 <input type="radio" name="activity" value="very active">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -161,8 +161,8 @@
                     <p>Workout everyday</p>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label">
+              </button>
+              <button class="form__label" type="button">
                 <input type="radio" name="activity" value="intensive">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -175,8 +175,8 @@
                       day</p>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label">
+              </button>
+              <button class="form__label" type="button">
                 <input type="radio" name="activity" value="superman">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -188,12 +188,12 @@
                     <p>Daily exercise +&nbsp;physical work</p>
                   </figcaption>
                 </figure>
-              </label>
+              </button>
             </fieldset>
           </div>
           <div class="swiper-slide form__page form__page--pad">
             <fieldset class="form__group">
-              <label class="form__label">
+              <button class="form__label" type="button">
                 <input type="radio" name="reach" value="lose">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -205,8 +205,8 @@
                     <p>I think I’m overweight</p>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label">
+              </button>
+              <button class="form__label" type="button">
                 <input type="radio" name="reach" value="hold">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -218,8 +218,8 @@
                     <p>My body is perfect now</p>
                   </figcaption>
                 </figure>
-              </label>
-              <label class="form__label">
+              </button>
+              <button class="form__label" type="button">
                 <input type="radio" name="reach" value="gain">
                 <figure class="radiobutton">
                   <div class="radiobutton__icon">
@@ -231,7 +231,7 @@
                     <p>I consider myself thin</p>
                   </figcaption>
                 </figure>
-              </label>
+              </button>
             </fieldset>
           </div>
         </div>
@@ -296,5 +296,5 @@
     <button data-close="data-close" type="button" class="button modal__button">OK</button>
   </dialog>
 </div>
-    <script src="js/vendors.bundle.js?9a922733d3b66e25aec8"></script><script src="js/main.bundle.js?9a922733d3b66e25aec8"></script></body>
+    <script src="js/vendors.bundle.js?3a7c9ff9d5dca332e70a"></script><script src="js/main.bundle.js?3a7c9ff9d5dca332e70a"></script></body>
   </html>
