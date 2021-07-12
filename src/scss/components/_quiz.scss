@@ -344,9 +344,19 @@
   &__label {
     display: block;
     margin-bottom: 5px;
-
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
     input {
       display: none;
+      // @include abs-point(0, 0);
+      // @include size(100%);
+      // z-index: 2;
+      // opacity: 0;
+      // cursor: pointer;
 
       &:checked+.radiobutton {
         box-shadow: rgba(65, 60, 125, 0.102) 0 20px 20px,

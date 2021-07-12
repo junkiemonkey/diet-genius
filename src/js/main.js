@@ -15,7 +15,8 @@ import "../scss/styles.scss";
   const navClose = document.querySelector('.jsNavClose');
   const modal = document.querySelector('.jsModal');
   const urlSearchParams = new URLSearchParams(window.location.search);
-  const params = Object.fromEntries(urlSearchParams.entries()); 
+  const params = Object.fromEntries(urlSearchParams.entries());
+  const formLabels = document.querySelectorAll('.form__label');
 
   const isTouchDevice = 'ontouchstart' in window || 'onmsgesturechange' in window;
 
@@ -127,6 +128,20 @@ import "../scss/styles.scss";
     } else {
       emailForm[1].disabled = true;
     }
+  });  
+
+  formLabels.forEach(btn => {
+    btn?.addEventListener('click', function(e) {
+      const radio = this.querySelector('input');
+      if (!radio.checked) {
+        const clickEvent = new MouseEvent("click", {
+          "view": window,
+          "bubbles": true,
+          "cancelable": false
+        });
+        radio.dispatchEvent(clickEvent);
+      } 
+    });
   })
 
   form?.addEventListener('change', handleFormChange);
